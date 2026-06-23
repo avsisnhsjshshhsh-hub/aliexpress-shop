@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ice Silk Performance Shorts</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+--primary:#00d4ff;
+--secondary:#7c3aed;
+--dark:#050816;
+--card:#0f172a;
+--text:#ffffff;
+--muted:#94a3b8;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Inter,sans-serif;
+}
+
+body{
+background:var(--dark);
+color:white;
+overflow-x:hidden;
+}
+
+header{
+position:fixed;
+top:0;
+width:100%;
+z-index:1000;
+backdrop-filter:blur(20px);
+background:rgba(5,8,22,.75);
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.nav{
+max-width:1200px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 20px;
+}
+
+.logo{
+font-size:1.5rem;
+font-weight:900;
+letter-spacing:1px;
+}
+
+.cta{
+background:linear-gradient(135deg,var(--primary),var(--secondary));
+padding:12px 24px;
+border-radius:999px;
+color:white;
+text-decoration:none;
+font-weight:700;
+transition:.3s;
+}
+
+.cta:hover{
+transform:translateY(-3px);
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+padding:120px 20px 50px;
+}
+
+.hero-container{
+max-width:1200px;
+margin:auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+.hero-img img{
+width:100%;
+border-radius:30px;
+box-shadow:0 30px 80px rgba(0,212,255,.25);
+}
+
+.badge{
+display:inline-block;
+padding:10px 18px;
+background:rgba(0,212,255,.12);
+border:1px solid rgba(0,212,255,.25);
+border-radius:999px;
+margin-bottom:20px;
+font-weight:600;
+}
+
+.hero h1{
+font-size:4rem;
+font-weight:900;
+line-height:1;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:1.1rem;
+color:var(--muted);
+line-height:1.8;
+margin-bottom:25px;
+}
+
+.price{
+font-size:3rem;
+font-weight:900;
+margin-bottom:20px;
+color:#00ffae;
+}
+
+.features{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+margin-bottom:30px;
+}
+
+.feature{
+padding:12px 16px;
+background:rgba(255,255,255,.05);
+border-radius:12px;
+font-size:.9rem;
+}
+
+.section{
+padding:100px 20px;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+}
+
+.section-title{
+text-align:center;
+font-size:3rem;
+font-weight:900;
+margin-bottom:60px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:var(--card);
+padding:30px;
+border-radius:25px;
+border:1px solid rgba(255,255,255,.06);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card h3{
+margin:15px 0;
+font-size:1.3rem;
+}
+
+.card p{
+color:var(--muted);
+line-height:1.8;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+border-radius:20px;
+}
+
+.review{
+background:var(--card);
+padding:30px;
+border-radius:20px;
+}
+
+.review .stars{
+color:#ffd700;
+font-size:1.2rem;
+margin-bottom:10px;
+}
+
+.faq{
+max-width:800px;
+margin:auto;
+}
+
+details{
+background:var(--card);
+margin-bottom:15px;
+padding:20px;
+border-radius:15px;
+}
+
+summary{
+cursor:pointer;
+font-weight:700;
+}
+
+.bottom-cta{
+text-align:center;
+padding:120px 20px;
+background:linear-gradient(135deg,#0f172a,#111827);
+}
+
+.bottom-cta h2{
+font-size:3rem;
+margin-bottom:20px;
+}
+
+.bottom-cta p{
+color:var(--muted);
+margin-bottom:30px;
+}
+
+footer{
+padding:30px;
+text-align:center;
+color:var(--muted);
+}
+
+.sticky-buy{
+position:fixed;
+bottom:20px;
+left:50%;
+transform:translateX(-50%);
+background:linear-gradient(135deg,var(--primary),var(--secondary));
+padding:18px 30px;
+border-radius:999px;
+font-weight:800;
+box-shadow:0 15px 40px rgba(0,212,255,.4);
+z-index:1000;
+text-decoration:none;
+color:white;
+}
+
+@media(max-width:900px){
+
+.hero-container{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:2.8rem;
+}
+
+.section-title{
+font-size:2rem;
+}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="nav">
+<div class="logo">ICE SHORTS™</div>
+<a href="#buy" class="cta">BUY NOW</a>
+</div>
+</header>
+
+<section class="hero">
+<div class="hero-container">
+
+<div class="hero-text">
+
+<div class="badge">
+?? BEST SELLING SUMMER SHORTS
+</div>
+
+<h1>Stay Cool.<br>Train Hard.</h1>
+
+<p>
+Ultra-light Ice Silk Performance Shorts engineered for running,
+gym training, walking, travel and everyday summer comfort.
+Quick-dry technology keeps you cool when the heat rises.
+</p>
+
+<div class="price">
+EGP 572.53
+</div>
+
+<div class="features">
+<div class="feature">? Ice Silk Fabric</div>
+<div class="feature">?? Breathable</div>
+<div class="feature">? Quick Dry</div>
+<div class="feature">?? Athletic Fit</div>
+</div>
+
+<a href="#buy" class="cta">
+GET YOURS TODAY
+</a>
+
+</div>
+
+<div class="hero-img">
+<img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1200" alt="">
+</div>
+
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+
+<h2 class="section-title">
+Why Customers Love It
+</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>? Cooling Technology</h3>
+<p>Designed to feel light and cool during hot summer days.</p>
+</div>
+
+<div class="card">
+<h3>?? Quick Dry</h3>
+<p>Advanced moisture-wicking performance keeps sweat away.</p>
+</div>
+
+<div class="card">
+<h3>?? Gym Ready</h3>
+<p>Maximum flexibility for workouts and active lifestyles.</p>
+</div>
+
+<div class="card">
+<h3>? Travel Friendly</h3>
+<p>Wrinkle-resistant and lightweight for easy packing.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+
+<h2 class="section-title">
+Product Gallery
+</h2>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=1200">
+<img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=1200">
+<img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1200">
+<img src="https://images.unsplash.com/photo-1506629905607-d9d5b7d8f54f?w=1200">
+
+</div>
+
+</div>
+</section>
+
+<section class="section">
+
+<div class="container">
+
+<h2 class="section-title">
+Customer Reviews
+</h2>
+
+<div class="grid">
+
+<div class="review">
+<div class="stars">?????</div>
+<p>
+Best shorts I've bought this year.
+Super comfortable during workouts.
+</p>
+</div>
+
+<div class="review">
+<div class="stars">?????</div>
+<p>
+Lightweight and breathable.
+Perfect for summer weather.
+</p>
+</div>
+
+<div class="review">
+<div class="stars">?????</div>
+<p>
+Bought one pair and came back for three more.
+Excellent value.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="container">
+
+<h2 class="section-title">
+Frequently Asked Questions
+</h2>
+
+<div class="faq">
+
+<details>
+<summary>Are these true to size?</summary>
+<p>Yes. Choose your normal size.</p>
+</details>
+
+<details>
+<summary>Can I use them for running?</summary>
+<p>Absolutely. They're designed for sports and active use.</p>
+</details>
+
+<details>
+<summary>How fast do they dry?</summary>
+<p>The quick-dry fabric dries significantly faster than cotton.</p>
+</details>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="bottom-cta" id="buy">
+
+<h2>
+Limited Summer Stock
+</h2>
+
+<p>
+Join thousands of satisfied customers and upgrade your comfort today.
+</p>
+
+<a href="#" class="cta">
+ORDER NOW
+</a>
+
+</section>
+
+<footer>
+© 2025 ICE SHORTS™ • All Rights Reserved
+</footer>
+
+<a href="#buy" class="sticky-buy">
+?? BUY NOW — EGP 572.53
+</a>
+
+</body>
+</html>
